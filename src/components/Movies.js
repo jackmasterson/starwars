@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Carousel } from 'react-bootstrap';
 
 class Movies extends Component {
     formatDate(unformattedDate) {
@@ -15,17 +16,21 @@ class Movies extends Component {
     render() {
         return (
             <div className="movies">
+                <Carousel
+                    pauseOnHover={true}
+                >
                 {this.props.movies.map(movie => {
                     let formattedDate = this.formatDate(movie.release_date);
                     return (
-                        <div className="movie"
+                        <Carousel.Item className="movie"
                             key={movie.episode_id}>
                             <h4>{movie.title}</h4>
                             <p>Release Date: {formattedDate}</p>
                             <p className="small-par narrow">Synopsis: {movie.opening_crawl}</p>
-                        </div>
+                        </Carousel.Item>
                     )
                 })}
+                </Carousel>
             </div>
         )
     }

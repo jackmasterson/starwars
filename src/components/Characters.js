@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
 
 class Characters extends Component {
 
@@ -7,14 +8,16 @@ class Characters extends Component {
             <div className="nav">
                 {this.props.characters.map(character => {
                     return (
-                        <button
-                            className="nav-item" 
+                        <Button 
+                            bsStyle="primary" 
+                            bsSize="large"
+                            className="nav-item"
                             key={character.url}
                             {...character}
                             onClick={() => this.props.handleClick(character)}
                         >
-                        {character.name}
-                        </button>
+                            {character.name}
+                        </Button>
                     )
                 })}
             </div>
