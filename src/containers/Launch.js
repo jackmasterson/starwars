@@ -5,9 +5,9 @@ class Launch extends Component {
     render() {
         return (
             <div className="App">
-                <div className="header">
-                    <h1>Pick your Star Wars Character</h1>
-                    <h3>And watch the Force at work</h3>
+                <div className="header page-header">
+                    <h1>Pick your Star Wars Character<small>  And watch the Force at work</small></h1>
+                    
                 </div>
                 <LaunchComponent/>
             </div>
